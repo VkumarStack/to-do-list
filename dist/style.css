@@ -1,0 +1,155 @@
+/*-----------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*-----------------------------------------------------------*/
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+div.header {
+    
+    display: flex;
+    align-items: center;
+    gap: 5%;
+
+    padding: 10px;
+    
+    background-color: #a5f3fc;
+
+}
+
+div.header>h1 {
+    font-size: 50px;
+}
+
+div.main-content {
+    height: 100%;
+    
+    display: flex;
+}
+
+div.side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    
+    height: 100%;
+    
+    background-color: #ecfeff;
+}
+
+
+div.side-bar button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    width: 100%;
+    padding: 10px;
+    background-color: #ecfeff;
+    border: none;
+    font-size: 22px;
+}
+
+div.side-bar button:hover {
+    background-color: #a5f3fc;
+}
+
+div.side-bar button:nth-child(3) {
+    border-bottom: dashed 2px #a5f3fc;
+}
+
+div.side-bar>div.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+div.project-form {
+    visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+div.project-form button:hover {
+    background-color: inherit;
+}
+
+div.project-form input {
+    height: 20px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    background-color: #a5f3fc;
+    font-size: 18px;
+}
+
+div.project-form input:focus:invalid {
+    outline: none;
+    border-color:rgb(207, 59, 59);
+    box-shadow: 0 0 2px rgb(207, 59, 59);
+}
+
+div.project-form input:valid {
+    outline: none;
+}
+
+div.project-form svg:hover {
+    color: #a5f3fc;
+}
