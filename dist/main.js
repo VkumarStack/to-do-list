@@ -1,5 +1,5 @@
 let renderer = function() {
-    document.querySelector('button.add-project').addEventListener('click', () => {
+    document.querySelector('button#add-project').addEventListener('click', () => {
         const form = document.querySelector('div.project-form');
         if (form.style.visibility !== 'visible')
             form.style.visibility = 'visible';
@@ -17,26 +17,36 @@ let renderer = function() {
         }
     });
 
-    this.clearProjects = function() {
-        
-    }
+    document.querySelector('button.projects-dropdown').addEventListener('click', () => {
+        const container = document.querySelector('div.generated-projects');
+        if (container.style.display !== 'none')
+            container.style.display = 'none';
+        else
+            container.style.display = 'flex';
+    });
 
-    this.renderProjects = function(projects) {
-        const projectsButton = document.querySelector('div.projects button.add-project');
+    function renderAllProjects(projects) {
+        const container = document.querySelector('div.generated-projects');
         const keys = Object.keys(projects);
         for (let i = 1; i < keys.length; i++)
         {
-            if (keys[i] !== 'General')
-            {
-                let btn = document.createElement('button');
-                btn.setAttribute('type', 'button');
-                btn.textContent = keys[i];
-                document.querySelector('div.projects').insertBefore(btn, projectsButton);
-            }
+            let btn = document.createElement('button');
+            btn.setAttribute('type', 'button');
+            btn.textContent = keys[i];
+            container.appendChild(btn);
+
         }
     }
 
-    return {renderProjects};
+    function renderAProject(project) {
+        const container = document.querySelector('div.generated-projects');
+        let btn = document.createElement('button');
+        btn.setAttribute('type', 'button');
+        btn.textContent = project;
+        container.appendChild(btn);
+    }
+
+    return {renderAllProjects, renderAProject};
 
 }();
 
@@ -44,12 +54,12 @@ let data = function() {
     // Objects: Projects are objects mapping the project name to a list of task objects
     let projects = { 'General': [] };
 
-    this.addProject = function(project) {
-        if (project in this.projects)
+    function addProject(project) {
+        if (project in projects)
             return;
         projects[project] = [];
-        renderer.renderProjects(projects);
+        renderer.renderAProject(project);
     } 
 
-    return {projects, addProject};
+    return {addProject};
 }();

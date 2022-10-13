@@ -71,7 +71,7 @@ div.header {
 
 }
 
-div.header>h1 {
+div.header h1 {
     font-size: 50px;
 }
 
@@ -81,14 +81,16 @@ div.main-content {
     display: flex;
 }
 
-div.side-bar {
+div.side-bar, div.side-bar div {
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
-    
-    height: 100%;
+    align-items: flex-start;
     
     background-color: #ecfeff;
+}
+
+div.side-bar div {
+    width: 100%;
 }
 
 
@@ -108,24 +110,31 @@ div.side-bar button:hover {
     background-color: #a5f3fc;
 }
 
-div.side-bar button:nth-child(3) {
-    border-bottom: dashed 2px #a5f3fc;
+div.side-bar button.projects-dropdown {
+    border-bottom: dashed 2px #a5f3fc;   
 }
 
-div.side-bar>div.projects {
+div.side-bar div.generated-projects {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
 }
 
-div.project-form {
+div.side-bar div.project-form {
     visibility: hidden;
 
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 0px 10px;
 }
+
+div.project-form form {
+    padding-left: 10px;
+}
+
+div.project-form button {
+    width: auto;
+}
+
 
 div.project-form button:hover {
     background-color: inherit;
@@ -153,3 +162,45 @@ div.project-form input:valid {
 div.project-form svg:hover {
     color: #a5f3fc;
 }
+
+div.todos {
+    padding: 10px;
+    width: 100%;
+
+
+    font-size: 20px;
+
+    background-color: #fafafa;
+}
+
+div.todos h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+div.todos h2 {
+    font-size: 18px;
+}
+
+div.todos h3 {
+    font-size: 15px;
+}
+
+div.project-card {
+    background-color: #e5e5e5;
+    
+    border-radius: 5px;
+    
+    padding: 5px;
+    min-height: 50px;
+
+    display: flex;
+    gap: 10px;
+}
+
+div.project-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
