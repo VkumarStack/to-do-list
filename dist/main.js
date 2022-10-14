@@ -1,4 +1,6 @@
 let renderer = function() {
+    //document.querySelector('#new-todo').addEventListener('click', hideToDo)
+    
     document.querySelector('button#add-project').addEventListener('click', () => {
         const form = document.querySelector('div.project-form');
         if (form.style.visibility !== 'visible')
@@ -24,6 +26,10 @@ let renderer = function() {
         else
             container.style.display = 'flex';
     });
+
+    function hideToDo() {
+
+    }
 
     function renderAllProjects(projects) {
         const container = document.querySelector('div.generated-projects');
